@@ -31,8 +31,12 @@
       </div>
       <ul class="nav navbar-nav navbar-right justify-content-end">
         {{#if user}}
-        <li class="nav-item">
-          <a href="#">{{user.name}}</a>
+        <li class="dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            {{user.name}}<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a class="nav-link" href="/logout">Logout</a></li>
+          </ul>
         </li>
         {{else}}
         <li class="nav-item">

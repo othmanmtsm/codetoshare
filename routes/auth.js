@@ -13,7 +13,6 @@ router.route('/login')
   });
 
 
-
 router.route('/register')
     .get((req,res,next)=>{
         res.render('register',{ title: 'Register new account' });
@@ -45,5 +44,18 @@ router.route('/register')
         })
         }
     });
+
+router.get('/logout',function(req,res){
+  req.logout();
+  res.redirect('/');
+});
+
+
+router.get('/auth/facebook',passport.authenticate('facebook',{scope:'email'}));
+
+router.get('/auth/facebook/callback', passport.authenticate('facebook',{
+  successRedirect: '/',
+  failureRedirect: '/'
+}))
 
 module.exports = router;
