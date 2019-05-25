@@ -5,8 +5,13 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var expressValidator = require('express-validator');
 
+var mongoose = require('mongoose');
+var config = require('./config');
+
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+
+mongoose.connect(config.dbConstring);
+global.User = require('./models/user');
 
 var app = express();
 
@@ -22,7 +27,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(expressValidator());
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

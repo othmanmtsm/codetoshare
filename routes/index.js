@@ -7,16 +7,16 @@ var transporter = nodemailer.createTransport(config.mailer);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'eff app' });
+  res.render('index', { title: 'codetoshare' });
 });
 
 router.get('/about', function(req,res,next){
-  res.render('about', { title: 'eff app' })
+  res.render('about', { title: 'codetoshare' })
 });
 
 router.route('/contact')
   .get((req,res,next) => {
-    res.render('contact', { title: 'eff app' });
+    res.render('contact', { title: 'codetoshare' });
   })
   .post((req,res,next) => {
     req.checkBody('name', 'name required').notEmpty();
@@ -27,7 +27,7 @@ var errors = req.validationErrors();
 
 if (errors) {
   res.render('contact', { 
-    title: 'eff app',
+    title: 'codetoshare',
     name: req.body.name,
     email: req.body.email,
     message: req.body.message,
@@ -35,7 +35,7 @@ if (errors) {
 });
 }else{
     let mailOptions = {
-      from: 'eff <no-reply@eff.com>',
+      from: 'codetoshare <no-reply@codetoshare.com>',
       to: 'othman.motassim18@gmail.com',
       subject: 'you got a new message from a visitor',
       text: req.body.message
@@ -45,9 +45,17 @@ if (errors) {
       if (error) {
         return  console.log(error);
       }
-      res.render('thanku', { title: 'eff app' });
+      res.render('thanku', { title: 'codetoshare' });
     });
   }
+});
+
+router.get('/register',(req,res,next)=>{
+  res.render('register',{ title: 'Register new account' });
+});
+
+router.get('/login',(req,res,next)=>{
+  res.render('login',{ title: 'Login to your account' });
 });
 
 module.exports = router;
