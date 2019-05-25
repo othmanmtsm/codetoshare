@@ -1,9 +1,13 @@
 <div class="container">
-    <form action="post" class="auth-form col-12 col-md-6 mx-auto">
-        <h2 class="text-center">Register a new account</h2>
-        <input type="text" class="form-control" name="name" placeholder="Enter your name" required><br/>
-        <input type="email" class="form-control" name="email" placeholder="Enter your email" required><br/>
-        <input type="password" class="form-control" name="password" placeholder="Enter a password" required><br/>
-        <button type="submit" class="btn btn-primary btn-block">Register</button>
+    <form method="post" class="auth-form col-12 col-md-6 mx-auto">
+         {{#each errorMessages}}
+            <p style="color:red">{{this.msg}}</p>
+        {{/each}}
+        <h2 class="text-center">S'inscrire</h2>
+        <input type="text" class="form-control" name="name" placeholder="Nom"><br/>
+        <input type="email" class="form-control" name="email" placeholder="Adress email"><br/>
+        <input type="password" class="form-control" name="password" placeholder="Mot de passe"><br/>
+        <input type="password" class="form-control" name="confirmPassword" placeholder="Confirmez votre mot de passe"><br/>
+        <button type="submit" class="btn btn-primary btn-block">S'inscrire</button>
     </form>
 </div>

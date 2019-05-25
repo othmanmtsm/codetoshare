@@ -50,12 +50,5 @@ if (errors) {
   }
 });
 
-router.get('/register',(req,res,next)=>{
-  res.render('register',{ title: 'Register new account' });
-});
-
-router.get('/login',(req,res,next)=>{
-  res.render('login',{ title: 'Login to your account' });
-});
 
 module.exports = router;
