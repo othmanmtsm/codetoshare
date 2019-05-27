@@ -5,3 +5,24 @@ body {
 a {
   color: #00B7FF;
 }
+
+#codee{
+  height: 95vh;
+  position: relative;
+}
+
+.CodeMirror{
+  height: 100%;
+}
+
+#chatbox{
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+}
+
+#chat-listMessages{
+  height: 300px;
+  overflow-y: scroll;
+}
