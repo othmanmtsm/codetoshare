@@ -1,3 +1,4 @@
+<div class="loginp">
 <div class="container">
     <form method="post" class="auth-form col-12 col-md-6 mx-auto">
          {{#each errorMessages}}
@@ -11,6 +12,20 @@
         <button type="submit" class="btn btn-primary btn-block">S'inscrire</button>
         <br/>
         <h4 class="text-center">Ou bien</h4>
-        <a href="/auth/facebook" class="btn btn-lg btn-success btn-block">S'authentifier avec facebook</a>
+        <a href="/auth/facebook" class="btn btn-lg btn-block"><i class="fab fa-facebook"></i> Continuer avec facebook</a>
     </form>
 </div>
+</div>
+
+
+
+<script>
+VANTA.NET({
+  el: ".loginp",
+  spacing: 16.00,
+  showDots: false,
+  backgroundColor: 0x011936,
+  color: 0x998FC7,
+  points: 5.00
+})
+</script>

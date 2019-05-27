@@ -6,6 +6,25 @@ a {
   color: #00B7FF;
 }
 
+#loginbtn{
+  color: #011936 !important;
+  background-color: #d4c2fc;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+#trans-nav{
+  background: none;
+}
+
+.navbar{
+  z-index: 1;
+}
+
+nav .nav-link{
+  color: #ffff !important;
+}
+
 #codee{
   height: 95vh;
   position: relative;
@@ -16,7 +35,6 @@ a {
 }
 
 #chatbox{
-  background-color: #fff;
   position: absolute;
   bottom: 0;
   right: 10px;
@@ -25,4 +43,56 @@ a {
 #chat-listMessages{
   height: 300px;
   overflow-y: scroll;
+}
+
+#hdr{
+  height: 60vh;
+  margin-top: -100px;
+}
+
+.pxl{
+  font-family: 'Press Start 2P', cursive;
+}
+
+.header-card{
+  background-image: linear-gradient(to top, #ffffff, #fdfdff, #fcfaff, #faf8ff, #f9f5ff);
+  margin-top: -100px;
+  border: none;
+}
+
+.card-title{
+  width: 18rem;
+}
+
+.card-text{
+  font-size: 150%;
+}
+.loginp{
+  height: 104.6vh;
+  margin-top: -100px;
+  padding-top: 20%;
+}
+.auth-form{
+  background-color: #f9f5ff;
+  padding: 30px;
+  border-radius: 10px;
+}
+#tsknav{
+  background-color: #011936;
+  height: 100px;
+  margin-top: -100px;
+}
+.fa-comment-dots{
+  color: #f9f5ff;
+}
+.fa-paper-plane{
+  color: #011936;
+}
+#msgs{
+  background-color: #f9f5ff;
+}
+#msgs .panel-heading{
+  padding:20px;
+  background-color: #011936;
+  color: #faf8ff;
 }

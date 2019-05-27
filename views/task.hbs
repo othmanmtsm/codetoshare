@@ -1,3 +1,4 @@
+<div id="tsknav"></div>
 <div id="codee">
     <textarea id="code-screen">{{content}}</textarea>
     <div class="panel-group" id="chatbox">
@@ -5,7 +6,7 @@
             
             <div id="collapse1" class="panel-collapse collapse">
                 
-                <div class="panel panel-primary">
+                <div class="panel panel-primary" id="msgs">
                     <div class="panel-heading">
                         <span id="chatbox-username">
                             {{#if user}}
@@ -15,14 +16,14 @@
                     </div>
                     <div class="panel-body">
                         <ul class="media-list" id="chat-listMessages">
-
+                            <br/>
                         </ul>
                     </div>
                     <div class="panel-footer">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Ecrire votre message ici" id="userMessage">
                             <span class="input-group-btn">
-                                <button type="buttom" class="btn btn-primary" onclick="sendMessage()">Envoyer</button>
+                                <button type="buttom" class="btn" onclick="sendMessage()"><i class="far fa-paper-plane"></i></button>
                             </span>
                         </div>
                     </div>
@@ -32,7 +33,7 @@
 
             <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" href="#collapse1" class="btn btn-primary">Chat</a>
+                        <a data-toggle="collapse" href="#collapse1" class="btn"><i class="fas fa-comment-dots fa-3x"></i></a>
                     </h4>
             </div>
         </div>
@@ -76,7 +77,8 @@
         init(obj.str, obj.revision, obj.clients, new SocketIOAdapter(socket));
     });
 
-    var username = $("#chatbox-username").val();
+    var username = $("#chatbox-username").text();
+    console.log(username);
     if(username === ''){
         var userId = Math.floor(Math.random() * 9999).toString();
         username = "Bnadm" + userId;
@@ -85,6 +87,17 @@
 
     var roomId = $('#roomId').val();
     socket.emit('joinRoom', {room: roomId, username: username});
+
+
+
+    /*function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+        return color;
+    }*/
 
     var userMessage = function(name,text){
         return('<li class="media"><div class="media-body"><div class="media">' +

@@ -22,7 +22,7 @@ router.get('/task/:id',function(req,res){
                 res.render('error');
             }
             if (data) {
-                res.render('task',{content: data.content,roomId: data.id})
+                res.render('task',{content: data.content,roomId: data.id,title: 'codetoshare'})
             }else{
                 res.render(err);
             }
