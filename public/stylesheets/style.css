@@ -55,17 +55,17 @@ nav .nav-link{
 }
 
 .header-card{
-  background-image: linear-gradient(to top, #ffffff, #fdfdff, #fcfaff, #faf8ff, #f9f5ff);
+  background-color: #fdfdff;
   margin-top: -100px;
   border: none;
 }
 
 .card-title{
-  width: 18rem;
+  font-weight: bold;
 }
 
 .card-text{
-  font-size: 150%;
+  font-size: 15px;
 }
 .loginp{
   height: 104.6vh;
@@ -82,7 +82,7 @@ nav .nav-link{
   height: 100px;
   margin-top: -100px;
 }
-.fa-comment-dots{
+.fa-comments{
   color: #f9f5ff;
 }
 .fa-paper-plane{
@@ -95,4 +95,40 @@ nav .nav-link{
   padding:20px;
   background-color: #011936;
   color: #faf8ff;
+}
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#video-container{
+  position: absolute;
+  top:10px;
+  right: 10px;
+}
+#my-video {
+  margin-top: 15px;
+  width: 100px;
+  height: 75px;
+  background-color: #eee;
+}
+
+#second-video {
+  width: 200px;
+  height: 170px;
+  max-height: 480px;
+  background-color: #eee;
+}
+#make-call{
+  color: rgb(59, 177, 55);
+}
+#end-call{
+  color: rgb(206, 57, 57);
+}
+#step1-error, #step2, #step3 {
+  display: none;
+}
+
+#my-id {
+  font-weight: bold;
 }

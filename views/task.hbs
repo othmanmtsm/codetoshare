@@ -1,6 +1,22 @@
 <div id="tsknav"></div>
 <div id="codee">
     <textarea id="code-screen">{{content}}</textarea>
+    <div id="video-container">
+        <video autoplay id="second-video"></video>
+        <video autoplay id="my-video" muted="true"></video>
+        <div id="step2">
+            <p class="alert alert-light" role="alert">Your ID: <span id="my-id">...</span></p>
+            <div class="form-inline">
+                <input type="text" class="form-control" placeholder="Call User ID..." id="callto-id">
+                <a href="#" class="btn" id="make-call"><i class="fas fa-phone fa-2x"></i></a>
+            </div>
+        </div>
+        <div id="step3">
+            <p>Talk to <span id="second-id">...</span>
+                <a href="#" class="btn" id="end-call"><i class="fas fa-phone-slash fa-2x"></i></a>
+            </p>
+        </div>
+    </div>
     <div class="panel-group" id="chatbox">
         <div class="panel panel-default">
             
@@ -33,7 +49,7 @@
 
             <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" href="#collapse1" class="btn"><i class="fas fa-comment-dots fa-3x"></i></a>
+                        <a data-toggle="collapse" href="#collapse1" class="btn"><i class="fas fa-comments fa-2x"></i></a>
                     </h4>
             </div>
         </div>
@@ -77,11 +93,10 @@
         init(obj.str, obj.revision, obj.clients, new SocketIOAdapter(socket));
     });
 
-    var username = $("#chatbox-username").text();
-    console.log(username);
+    var username = $("#chatbox-username").val();
     if(username === ''){
         var userId = Math.floor(Math.random() * 9999).toString();
-        username = "Bnadm" + userId;
+        username = "Utilisateur" + userId;
         $('#chatbox-username').text(username);
     };
 
@@ -99,10 +114,10 @@
         return color;
     }*/
 
-    var userMessage = function(name,text){
+    var userMessage = function(name,text,color){
         return('<li class="media"><div class="media-body"><div class="media">' +
-        '<div class="media-body/>"' + 
-        '<b>' + name + '</b> : ' + text +
+        '<div class="media-body">' + 
+        '<span style="color:'+color+'; font-weight:bold;">' + name + '</span> : ' + text +
         '<hr/></div></div></div></li>'
         );
     };
@@ -115,7 +130,9 @@
     };
 
     socket.on('chatMessage', function(data){
-        $('#chat-listMessages').append(userMessage(data.username,data.message));
+        $('#chat-listMessages').append(userMessage(data.username,data.message,'blue'));
     });
+
+    
 
 </script>

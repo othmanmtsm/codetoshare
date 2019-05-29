@@ -6,7 +6,7 @@ var roomList = {};
 
 
 module.exports = function(server){
-    var str = 'Cette salle est accessible par son lien, si vous enregistrez le lien, vous pouvez accéder à votre code quand vous le souhaitez \n\n' +
+    var str = '//envoyer le lien de cette page à celui qui veut vous rejoindre \n\n' +
                 'var i = "Bonjour!"; \n function afficherBonjour(i){\nconsole.log(i)\n};\n\n //Happy coding';
 
 
