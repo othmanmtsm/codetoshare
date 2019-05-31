@@ -38,6 +38,7 @@ nav .nav-link{
   position: absolute;
   bottom: 0;
   right: 10px;
+  z-index: 9;
 }
 
 #chat-listMessages{
