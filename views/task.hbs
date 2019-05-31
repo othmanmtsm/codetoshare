@@ -1,4 +1,3 @@
-<div id="tsknav"></div>
 <div id="codee">
     <textarea id="code-screen">{{content}}</textarea>
     <div id="video-container">
@@ -141,7 +140,7 @@
   // Compatibility shim
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
     // PeerJS object
-    var peer = new Peer(username + roomId);
+    var peer = new Peer();
 
     peer.on('open', function(){
       document.getElementById('my-id').value = peer.id;

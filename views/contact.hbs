@@ -1,6 +1,6 @@
 <div class="container">
     <h1 class="text-center">Contact us</h1>
-    <form class="col-12 col-md-6 mx-auto" method="POST">
+    <form class="auth-form col-12 col-md-6 mx-auto" method="POST">
         {{#each errorMessages}}
             <p style="color:red">{{this.msg}}</p>
         {{/each}}
@@ -17,6 +17,6 @@
             <label for="exampleFormControlTextarea1">Message</label>
             <textarea class="form-control" name="message" id="exampleFormControlTextarea1" rows="3" placeholder="Enter your message">{{message}}</textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="button button-primary button-shadow">Submit</button>
     </form>
 </div>

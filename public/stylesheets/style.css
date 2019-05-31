@@ -26,7 +26,7 @@ nav .nav-link{
 }
 
 #codee{
-  height: 95vh;
+  height: 100vh;
   position: relative;
 }
 
@@ -42,6 +42,7 @@ nav .nav-link{
 
 #chat-listMessages{
   height: 300px;
+  max-width: 400px;
   overflow-y: scroll;
 }
 
@@ -68,14 +69,15 @@ nav .nav-link{
   font-size: 15px;
 }
 .loginp{
-  height: 104.6vh;
-  margin-top: -100px;
-  padding-top: 20%;
+  height: 100vh;
+  background-color: #121212;
+  padding-top: 10%;
 }
 .auth-form{
   background-color: #f9f5ff;
   padding: 30px;
   border-radius: 10px;
+
 }
 #tsknav{
   background-color: #011936;
@@ -132,4 +134,7 @@ nav .nav-link{
 
 #my-id {
   font-weight: bold;
+}
+a{
+  text-decoration: none;
 }

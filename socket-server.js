@@ -6,8 +6,8 @@ var roomList = {};
 
 
 module.exports = function(server){
-    var str = '//envoyer le lien de cette page à celui qui veut vous rejoindre \n\n' +
-                'var i = "Bonjour!"; \n function afficherBonjour(i){\nconsole.log(i)\n};\n\n //Happy coding';
+    var str = '//Share the link of this page to let people join your room \n\n' +
+                'var i = "GoodBye Cruel World!"; \n function init(i){\nconsole.log(i)\n};\n init(i);\n\n //Happy coding';
 
 
     var io = socketIO(server);

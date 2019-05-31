@@ -39,7 +39,7 @@
                         <div class="brand header-brand">
                             <h1 class="m-0">
                                 <a href="#">
-                                    <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                    <img src="images/logo.png" width="200">
                                         <title>Code to share</title>
                                         <defs>
                                             <linearGradient x1="100%" y1="0%" x2="0%" y2="100%" id="logo-a">
@@ -64,54 +64,69 @@
             </header>
 
             <main>
-                <section class="hero text-center">
-                    <div class="hero-disk hero-disk-3 is-moving-object is-translating" data-translating-factor="90">
-                        <svg width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient x1="100%" y1="100%" x2="-1.265%" y2="100%" id="disk-3-a">
-                                    <stop stop-color="#040404" stop-opacity="0" offset="0%"/>
-                                    <stop stop-color="#3217BB" offset="100%"/>
-                                </linearGradient>
-                            </defs>
-                            <path d="M153 492c0-165.685 134.315-300 300-300s300 134.315 300 300H603c0-82.843-67.157-150-150-150s-150 67.157-150 150H153z" transform="translate(-153 -192)" fill="url(#disk-3-a)" fill-rule="evenodd"/>
-                        </svg>
-                    </div>
-                    <div class="hero-disk hero-disk-4 is-moving-object is-translating" data-translating-factor="50">
-                        <svg width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient x1="0%" y1="100%" y2="100%" id="disk-4-a">
-                                    <stop stop-color="#040404" stop-opacity="0" offset="0%"/>
-                                    <stop stop-color="#D15680" offset="100%"/>
-                                </linearGradient>
-                            </defs>
-                            <path d="M817 687c0 165.685-134.315 300-300 300S217 852.685 217 687h150c0 82.843 67.157 150 150 150s150-67.157 150-150h150z" transform="translate(-217 -687)" fill="url(#disk-4-a)" fill-rule="evenodd"/>
-                        </svg>
-                    </div>
-                    <div class="hero-sphere hero-sphere-2 is-moving-object is-translating" data-translating-factor="30">
-                        <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <radialGradient cx="83.479%" cy="86.284%" fx="83.479%" fy="86.284%" r="128.926%" id="sphere-2-a">
-                                    <stop stop-color="#3217BB" offset="0%"/>
-                                    <stop stop-color="#040404" stop-opacity="0" offset="100%"/>
-                                </radialGradient>
-                            </defs>
-                            <circle cx="251" cy="433" r="16" transform="translate(-235 -417)" fill="url(#sphere-2-a)" fill-rule="evenodd"/>
-                        </svg>
-                    </div>
-                    <div class="container-sm">
-                        <div class="hero-inner">
-                            <h1 class="hero-title mt-0 is-revealing">Easy way to share code wid devs</h1>
-                            <p class="hero-paragraph is-revealing">Create a room and start coding with others in no time</p>
-                            <div class="hero-cta is-revealing">
-                                <a class="button button-primary button-shadow" href="/register">Get started</a>
-                            </div>
-                            <div class="hero-browser">
-                                <img src="" width="800" height="450">
+                {{#if user}}
+                    <section class="cta section">
+                        <div class="container-sm">
+                            <div class="cta-inner section-inner">
+                                <div class="cta-content text-center">
+                                    <h2 class="section-title mt-0">Create your room now</h2>
+                                    <p class="section-paragraph">Create a room by clicking the button bellow, share the link with your friends so they can join.</p>
+                                    <div class="section-cta">
+                                        <a class="button button-primary button-shadow" href="/createTask">Create a room</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
-
+                    </section>
+                {{else}}
+                    <section class="hero text-center">
+                        <div class="hero-disk hero-disk-3 is-moving-object is-translating" data-translating-factor="90">
+                            <svg width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient x1="100%" y1="100%" x2="-1.265%" y2="100%" id="disk-3-a">
+                                        <stop stop-color="#040404" stop-opacity="0" offset="0%"/>
+                                        <stop stop-color="#3217BB" offset="100%"/>
+                                    </linearGradient>
+                                </defs>
+                                <path d="M153 492c0-165.685 134.315-300 300-300s300 134.315 300 300H603c0-82.843-67.157-150-150-150s-150 67.157-150 150H153z" transform="translate(-153 -192)" fill="url(#disk-3-a)" fill-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="hero-disk hero-disk-4 is-moving-object is-translating" data-translating-factor="50">
+                            <svg width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient x1="0%" y1="100%" y2="100%" id="disk-4-a">
+                                        <stop stop-color="#040404" stop-opacity="0" offset="0%"/>
+                                        <stop stop-color="#D15680" offset="100%"/>
+                                    </linearGradient>
+                                </defs>
+                                <path d="M817 687c0 165.685-134.315 300-300 300S217 852.685 217 687h150c0 82.843 67.157 150 150 150s150-67.157 150-150h150z" transform="translate(-217 -687)" fill="url(#disk-4-a)" fill-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="hero-sphere hero-sphere-2 is-moving-object is-translating" data-translating-factor="30">
+                            <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <radialGradient cx="83.479%" cy="86.284%" fx="83.479%" fy="86.284%" r="128.926%" id="sphere-2-a">
+                                        <stop stop-color="#3217BB" offset="0%"/>
+                                        <stop stop-color="#040404" stop-opacity="0" offset="100%"/>
+                                    </radialGradient>
+                                </defs>
+                                <circle cx="251" cy="433" r="16" transform="translate(-235 -417)" fill="url(#sphere-2-a)" fill-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="container-sm">
+                            <div class="hero-inner">
+                                <h1 class="hero-title mt-0 is-revealing">Easy way to share code with devs</h1>
+                                <p class="hero-paragraph is-revealing">Create a room and start coding with others in no time</p>
+                                <div class="hero-cta is-revealing">
+                                    <a class="button button-primary button-shadow" href="/register">Get started</a>
+                                </div>
+                                <div class="hero-browser">
+                                    <img src="images/thm.jpg" width="800" height="450" style="border-radius: 10px;">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                {{/if}}
                 <section class="features section text-center">
                     <div class="container-sm">
                         <div class="features-inner section-inner has-bottom-divider">
@@ -136,8 +151,8 @@
                                                 </g>
                                             </svg>
                                         </div>
-                                        <h3 class="feature-title mt-24">Feature</h3>
-                                        <p class="text-sm">A pseudo-Latin text used in web design, layout, and printing in place of English to emphasise design elements.</p>
+                                        <h3 class="feature-title mt-24">Job interviews</h3>
+                                        <p class="text-sm">You can use our platform to interview someone for their next job.</p>
                                     </div>
                                 </div>
                                 <div class="feature">
@@ -160,8 +175,8 @@
                                                 </g>
                                             </svg>
                                         </div>
-                                        <h3 class="feature-title mt-24">Feature</h3>
-                                        <p class="text-sm">A pseudo-Latin text used in web design, layout, and printing in place of English to emphasise design elements.</p>
+                                        <h3 class="feature-title mt-24">Education</h3>
+                                        <p class="text-sm">You can use it to explain a topic or a lesson to your students or classmates</p>
                                     </div>
                                 </div>
                             </div>
@@ -182,8 +197,8 @@
                                                 </g>
                                             </svg>
                                         </div>
-                                        <h3 class="feature-title mt-24">Feature</h3>
-                                        <p class="text-sm">A pseudo-Latin text used in web design, layout, and printing in place of English to emphasise design elements.</p>
+                                        <h3 class="feature-title mt-24">Code with your team</h3>
+                                        <p class="text-sm">Share your code in real time with your team.</p>
                                     </div>
                                 </div>
                                 <div class="feature">
@@ -203,28 +218,15 @@
                                                 </g>
                                             </svg>
                                         </div>
-                                        <h3 class="feature-title mt-24">Feature</h3>
-                                        <p class="text-sm">A pseudo-Latin text used in web design, layout, and printing in place of English to emphasise design elements.</p>
+                                        <h3 class="feature-title mt-24">Video calls</h3>
+                                        <p class="text-sm">Have a real-time video call with others.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-
-                <section class="cta section">
-                    <div class="container-sm">
-                        <div class="cta-inner section-inner">
-                            <div class="cta-content text-center">
-                                <h2 class="section-title mt-0">Stay in the know</h2>
-                                <p class="section-paragraph">Lorem ipsum is common placeholder text used to demonstrate the graphic elements of a document or visual presentation.</p>
-                                <div class="section-cta">
-                                    <a class="button button-primary button-shadow" href="#">Get early access</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                
             </main>
 
             <footer class="site-footer">
@@ -265,8 +267,8 @@
                     <div class="site-footer-inner has-top-divider">
                         <div class="brand footer-brand">
                             <a href="#">
-                                <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                                    <title>Florence</title>
+                                <img src="images/logo.png" width="200">
+                                    <title>Code to share</title>
                                     <defs>
                                         <linearGradient x1="100%" y1="0%" x2="0%" y2="100%" id="logo-footer-a">
                                             <stop stop-color="#FFF" stop-opacity=".48" offset="0%"/>
@@ -285,18 +287,24 @@
                             </a>
                         </div>
                         <ul class="footer-links list-reset">
-                            <li>
-                                <a href="#">Contact</a>
-                            </li>
-                            <li>
-                                <a href="#">About us</a>
-                            </li>
-                            <li>
-                                <a href="#">FAQ's</a>
-                            </li>
-                            <li>
-                                <a href="#">Support</a>
-                            </li>
+                            {{#if user}}
+                                <li>
+                                    <a href="/contact">Contact</a>
+                                </li>
+                                <li>
+                                    <a href="/about">About us</a>
+                                </li>
+                                <li>
+                                    <a href="/logout">Logout</a>
+                                </li>
+                            {{else}}
+                                <li>
+                                    <a href="/login">Login</a>
+                                </li>
+                                <li>
+                                    <a href="/register">Register</a>
+                                </li>
+                            {{/if}}
                         </ul>
                         <ul class="footer-social-links list-reset">
                             <li>
@@ -324,7 +332,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <div class="footer-copyright">&copy; 2018 Florence, all rights reserved</div>
+                        <div class="footer-copyright">&copy; 2019 Code to share, all rights reserved</div>
                     </div>
                 </div>
             </footer>
