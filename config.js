@@ -8,6 +8,6 @@ module.exports = {
             pass: 'tajtajtajin11'
         }
     },
-    dbConstring: 'mongodb://127.0.0.1:27017/codetoshare',
+    dbConstring: 'mongodb+srv://othman:tajtajtajin11@cluster0-58wqz.mongodb.net/test?retryWrites=true&w=majority',
     sessionKey: 'CodeToShare'
 }

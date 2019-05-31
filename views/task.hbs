@@ -69,7 +69,7 @@
     var SocketIOAdapter = ot.SocketIOAdapter;
     var CodeMirrorAdapter = ot.CodeMirrorAdapter;
 
-    var socket = io.connect('http://localhost:3000');
+    var socket = io.connect();
     var editor = CodeMirror.fromTextArea(document.getElementById('code-screen'),{
         lineNumbers: true,
         theme: 'monokai'
@@ -140,7 +140,11 @@
   // Compatibility shim
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
     // PeerJS object
-    var peer = new Peer();
+    var peer = new Peer({
+        host: 'codetoshare.herokuapp.com',
+        port: '443',
+        secure: true
+    });
 
     peer.on('open', function(){
       document.getElementById('my-id').value = peer.id;
