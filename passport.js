@@ -39,7 +39,7 @@ passport.use(new LocalStrategy({
 passport.use(new FacebookStrategy({
         clientID: '417121469127771',
         clientSecret: '0f4bcdf5715512304adc47b188429a65',
-        callbackURL: 'http://localhost:3000/auth/facebook/callback',
+        callbackURL: 'https://mysterious-waters-89970.herokuapp.com/auth/facebook/callback',
         profileFields: ['id','displayName','email']
     },function(token,refreshToken,profile,done){
         User.findOne({'facebookId':profile.id},function(err,user){
