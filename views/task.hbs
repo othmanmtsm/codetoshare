@@ -69,7 +69,7 @@
     var SocketIOAdapter = ot.SocketIOAdapter;
     var CodeMirrorAdapter = ot.CodeMirrorAdapter;
 
-    var socket = io.connect();
+    var socket = io.connect('http://localhost:3000');
     var editor = CodeMirror.fromTextArea(document.getElementById('code-screen'),{
         lineNumbers: true,
         theme: 'monokai'
@@ -140,11 +140,7 @@
   // Compatibility shim
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
     // PeerJS object
-    var peer = new Peer({
-        host: 'mysterious-waters-89970.herokuapp.com',
-        port: '443',
-        secure: true
-    });
+    var peer = new Peer();
 
     peer.on('open', function(){
       document.getElementById('my-id').value = peer.id;
@@ -153,8 +149,16 @@
     // Receiving a call
     peer.on('call', function(call){
       // Answer the call automatically (instead of prompting user) for demo purposes
-      call.answer(window.localStream);
-      step3(call);
+      var c = window.confirm("Click OK to answer");
+      if(c == true)
+      {
+        call.answer(window.localStream);
+        step3(call);
+      }else{
+          window.existingCall.close();
+        step2();
+      }
+      
     });
 
     peer.on('error', function(err){
