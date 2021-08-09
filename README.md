@@ -11,7 +11,7 @@ Parfois, montrer un code simple à quelqu'un, expliquer un cours de programmatio
 
 3-	Objectifs:
 
--	Un editeur du code en ligne facile a utilizer.
+-	Un editeur du code en ligne facile a utiliser.
 -	Discuter en vidéo avec des personnes partageant votre code.
  
 
